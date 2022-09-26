@@ -1,6 +1,6 @@
 {
-  "name": "marcin-orlowski/validator",
-  "description": "Validation helper.",
+  "name": "marcin-orlowski/type-asserts",
+  "description": "Data type assertions.",
   "homepage": "https://github.com/MarcinOrlowski/type-asserts",
   "version": "1.0.0",
   "keywords": [
