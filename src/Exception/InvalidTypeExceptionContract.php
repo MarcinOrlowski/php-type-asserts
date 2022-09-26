@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace MarcinOrlowski\TypeAsserts\Exception;
 
-interface InvalidTypeExceptionContract
+interface InvalidTypeExceptionContract extends \Throwable
 {
     public function __construct(string $type, array $allowed_types, ?string $var_name = null);
 }
