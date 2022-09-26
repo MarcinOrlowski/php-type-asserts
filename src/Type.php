@@ -19,7 +19,7 @@ class Type
     public const ARRAY          = 'array';
     public const BOOL           = 'bool';
     public const FLOAT          = 'float';
-    public const INTEGER        = 'integer';
+    public const INT            = 'int';
     public const NULL           = 'null';
     public const OBJECT         = 'object';
     public const STRING         = 'string';

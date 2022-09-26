@@ -30,6 +30,11 @@
       "MarcinOrlowski\\TypeAsserts\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "MarcinOrlowski\\TypeAsserts\\Tests\\": "tests/"
+    }
+  },
   "require": {
     "php": "^7.4||^8.0||^8.1"
   },
