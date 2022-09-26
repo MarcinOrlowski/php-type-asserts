@@ -16,5 +16,5 @@ namespace MarcinOrlowski\TypeAsserts\Exception;
 
 interface InvalidTypeExceptionContract
 {
-	public function __construct(string $type, array $allowed_types, ?string $var_name = null);
+    public function __construct(string $type, array $allowed_types, ?string $var_name = null);
 }

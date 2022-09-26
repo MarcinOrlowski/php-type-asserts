@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace MarcinOrlowski\TypeAsserts;
 
-use MarcinOrlowski\Validator\Exception as Ex;
+use MarcinOrlowski\TypeAsserts\Exception as Ex;
 
 /**
  * Data validator helper
