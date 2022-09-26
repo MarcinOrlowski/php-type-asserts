@@ -8,7 +8,7 @@ Data type assertions.
 ## Installation ##
 
 ```bash
-composer require-dev marcin-orlowski/type-asserts
+composer require --dev marcin-orlowski/type-asserts
 ```
 
 ----
