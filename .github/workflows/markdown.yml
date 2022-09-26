@@ -1,0 +1,35 @@
+##################################################################################
+#
+# @package   MarcinOrlowski\TypeAsserts
+#
+# @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+# @copyright 2014-2022 Marcin Orlowski
+# @license   http://www.opensource.org/licenses/mit-license.php MIT
+# @link      https://github.com/MarcinOrlowski/type-asserts
+#
+##################################################################################
+
+# Runs markdownlint on all *.md files
+
+name: "Markdown Lint"
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master, dev ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    # https://github.com/marketplace/actions/my-markdown-linter
+    - name: "Running markdown linter..."
+      uses: ruzickap/action-my-markdown-linter@v1
+      with:
+        exclude: vendor
+        config_file: .markdownlint.yaml
+
