@@ -8,3 +8,7 @@ composer.lock
 /.pre-commit-config.yaml
 /.markdownlint.yaml
 /phpstan.neon
+
+*.swp
+*~
+*.bak
