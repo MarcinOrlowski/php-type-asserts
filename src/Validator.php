@@ -34,11 +34,15 @@ class Validator
      * @param string|null     $var_name      Label or name of the variable to use exception message.
      *
      */
-    public static function assertIsType(mixed        $value,
-                                        string|array $allowed_types,
-                                        string       $ex_class = Ex\InvalidTypeException::class,
-                                        ?string      $var_name = null): void
+    public static function assertIsType(mixed   $value,
+                                                $allowed_types,
+                                        string  $ex_class = Ex\InvalidTypeException::class,
+                                        ?string $var_name = null): void
     {
+        if (!(\is_array($allowed_types) || \is_string($allowed_types))) {
+            throw new \InvalidArgumentException("Allowed types must be either string or array of strings.");
+        }
+
         $allowed_types = (array)$allowed_types;
 
         // Type::EXISTING_CLASS is artificial type, so we need separate logic to handle it.
