@@ -2,14 +2,12 @@
 declare(strict_types=1);
 
 /**
- * Validator
+ * PHP Type Asserts
  *
- * @package   MarcinOrlowski\Validator
- *
- * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ * @author    Marcin Orlowski
  * @copyright 2014-2022 Marcin Orlowski
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
- * @link      https://github.com/MarcinOrlowski/validator
+ * @link      https://github.com/MarcinOrlowski/php-type-asserts
  */
 
 namespace MarcinOrlowski\TypeAsserts;

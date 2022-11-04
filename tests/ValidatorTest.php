@@ -1,18 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcinOrlowski\TypeAsserts\Tests;
-
 /**
- * Laravel API Response Builder
+ * PHP Type Asserts
  *
- * @package   MarcinOrlowski\ResponseBuilder
- *
- * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
- * @copyright 2016-2022 Marcin Orlowskis
+ * @author    Marcin Orlowski
+ * @copyright 2014-2022 Marcin Orlowski
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
- * @link      https://github.com/MarcinOrlowski/laravel-api-response-builder
+ * @link      https://github.com/MarcinOrlowski/php-type-asserts
  */
+
+namespace MarcinOrlowski\TypeAsserts\Tests;
 
 use MarcinOrlowski\TypeAsserts\Type;
 use MarcinOrlowski\TypeAsserts\Validator;
@@ -56,18 +54,18 @@ class ValidatorTest extends TestCase
 //                'types'    => [type::STRING],
 //                'expected' => false,
 //            ],
-            [
+[
     'item'     => 667,
     'types'    => [type::INT],
     'expected' => true,
-            ],
-            [
-                'item'     => 'fail',
-                'types'    => [Type::INT,
-                               Type::BOOL,
-                ],
-                'expected' => false,
-            ],
+],
+[
+    'item'     => 'fail',
+    'types'    => [Type::INT,
+                   Type::BOOL,
+    ],
+    'expected' => false,
+],
 
         ];
 

@@ -1,8 +1,8 @@
 Please report any issue spotted using
-[GitHub's project tracker](https://github.com/MarcinOrlowski/type-asserts/issues).
+[GitHub's project tracker](https://github.com/MarcinOrlowski/php-type-asserts/issues).
 
 If you'd like to contribute to the this project,
-please [open new ticket](https://github.com/MarcinOrlowski/type-asserts/issues)
+please [open new ticket](https://github.com/MarcinOrlowski/php-type-asserts/issues)
 **before doing any work**. This will help us save your time in case I'd not be accept PR either
 completely or in proposed form. But if all is good and clear then follow common routine:
 

@@ -1,4 +1,4 @@
-# Type Asserts #
+# PHP Type Asserts #
 
 ## CHANGELOG ##
 

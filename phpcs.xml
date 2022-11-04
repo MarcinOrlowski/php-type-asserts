@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 <!--
- * Laravel API Response Builder - PHP Code Sniffer config file
+ * PHP Type Asserts
  *
- * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
- * @copyright 2016-2022 Marcin Orlowski
+ * @author    Marcin Orlowski
+ * @copyright 2014-2022 Marcin Orlowski
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
- * @link      https://github.com/MarcinOrlowski/laravel-api-response-builder
- *
+ * @link      https://github.com/MarcinOrlowski/php-type-asserts
  -->
 <ruleset name="Custom Standard" namespace="MyProject\CS\Standard">
 
