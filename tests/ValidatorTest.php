@@ -20,7 +20,7 @@ use MarcinOrlowski\TypeAsserts\Validator;
  *
  * @package MarcinOrlowski\ResponseBuilder\Tests
  */
-class ValidatorTest extends TestCase
+class ValidatorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Tests assertIsType() helper.
@@ -34,53 +34,63 @@ class ValidatorTest extends TestCase
          *   expected: @false if test is expected to fail (type of `item` is not in `types`), @true if it should pass.
          */
         $testData = [
-//            [
-//                'item'     => false,
-//                'types'    => [type::STRING],
-//                'expected' => false,
-//            ],
-//            [
-//                'item'     => false,
-//                'types'    => [type::BOOL],
-//                'expected' => true,
-//            ],
-//            [
-//                'item'     => 'foo',
-//                'types'    => [type::STRING],
-//                'expected' => true,
-//            ],
-//            [
-//                'item'     => 23,
-//                'types'    => [type::STRING],
-//                'expected' => false,
-//            ],
-[
-    'item'     => 667,
-    'types'    => [type::INT],
-    'expected' => true,
-],
-[
-    'item'     => 'fail',
-    'types'    => [Type::INT,
-                   Type::BOOL,
-    ],
-    'expected' => false,
-],
-
+            [
+                'item'     => new Dummy(),
+                'types'    => [Type::EXISTING_CLASS,
+                               Type::OBJECT,
+                ],
+                'expected' => true,
+            ],
+            [
+                'item'     => false,
+                'types'    => [type::STRING],
+                'expected' => false,
+            ],
+            [
+                'item'     => false,
+                'types'    => [type::BOOL],
+                'expected' => true,
+            ],
+            [
+                'item'     => 'foo',
+                'types'    => [type::STRING],
+                'expected' => true,
+            ],
+            [
+                'item'     => 23,
+                'types'    => [type::STRING],
+                'expected' => false,
+            ],
+            [
+                'item'     => 667,
+                'types'    => [type::INT],
+                'expected' => true,
+            ],
+            [
+                'item'     => 'fail',
+                'types'    => [Type::INT,
+                               Type::BOOL,
+                ],
+                'expected' => false,
+            ],
+            [
+                'item'     => 'string',
+                'types'    => [Type::FLOAT,
+                               Type::INT,
+                ],
+                'expected' => false,
+            ],
         ];
 
         foreach ($testData as $key => $data) {
-            $var_name = \sprintf('test_data[%d]', $key);
-
             $test_passed = true;
             try {
                 Validator::assertIsType($data['item'], $data['types']);
+                $msg = 'OK';
             } /** @noinspection BadExceptionsProcessingInspection */ catch (\Exception $ex) {
+                $msg = $ex->getMessage();
                 $test_passed = false;
             }
-
-            $msg = \sprintf('Entry #%d: testing if "%s" (%s) is one of these: %s.',
-                $key, $data['item'], \gettype($data['item']), \implode(', ', $data['types']));
             $this->assertEquals($test_passed, $data['expected'], $msg);
         }
     }

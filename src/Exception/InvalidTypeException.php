@@ -27,14 +27,14 @@ class InvalidTypeException extends \Exception implements InvalidTypeExceptionCon
 
         switch (\count($allowedTypes)) {
             case 0:
-                throw new \InvalidArgumentException('allowed_types array must not be empty.');
+                throw new \InvalidArgumentException('allowedTypes array must not be empty.');
 
             case 1:
-                $msg = '"%s" must be %s but %s found.';
+                $msg = '"%1$s" must be %2$s but %3$s found.';
                 break;
 
             default;
-                $msg = '"%s" must be one of allowed types: %s but %s found.';
+                $msg = '"%1$s" must be one of allowed types: %2$s but %3$s found.';
                 break;
         }
 

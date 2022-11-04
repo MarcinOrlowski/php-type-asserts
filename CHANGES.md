@@ -3,7 +3,8 @@
 ## CHANGELOG ##
 
 * 2.0.0 (2022-11-04)
-  * Dropped support for PHP 7. 
+  * Dropped support for PHP 7.
+  * Fixed `EXISTING_CLASS` assertion.
 
 * 1.2.0 (2022-09-26)
   * Made InvalidTypeExceptionContract extends \Throwable.

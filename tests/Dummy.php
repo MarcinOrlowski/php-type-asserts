@@ -12,10 +12,7 @@ declare(strict_types=1);
 
 namespace MarcinOrlowski\TypeAsserts\Tests;
 
-/**
- * Class TestCase
- */
-abstract class TestCase extends \PHPUnit\Framework\TestCase
+class Dummy
 {
 
 
