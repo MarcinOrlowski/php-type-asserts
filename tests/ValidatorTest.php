@@ -33,7 +33,7 @@ class ValidatorTest extends TestCase
          *   types   : array of allowed `Type::xxx` types
          *   expected: @false if test is expected to fail (type of `item` is not in `types`), @true if it should pass.
          */
-        $test_data = [
+        $testData = [
 //            [
 //                'item'     => false,
 //                'types'    => [type::STRING],
@@ -69,7 +69,7 @@ class ValidatorTest extends TestCase
 
         ];
 
-        foreach ($test_data as $key => $data) {
+        foreach ($testData as $key => $data) {
             $var_name = \sprintf('test_data[%d]', $key);
 
             $test_passed = true;

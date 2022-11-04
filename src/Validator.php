@@ -23,28 +23,24 @@ class Validator
      * Checks if $item (of name $key) is of type that is include in $allowed_types (there's `OR` connection
      * between specified types).
      *
-     * @param mixed           $value         Variable to be asserted.
-     * @param string|string[] $allowed_types Array of allowed types for $value, i.e. [Type::INTEGER]
-     * @param string          $ex_class      Name of exception class (which implements
-     *                                       Ex\InvalidTypeExceptionContract) to be used when assertion fails.
-     *                                       In that case object of that class will be instantiated and
-     *                                       thrown.
-     * @param string|null     $var_name      Label or name of the variable to use exception message.
+     * @param mixed           $value          Variable to be asserted.
+     * @param string|string[] $allowedTypes   Array of allowed types for $value, i.e. [Type::INTEGER]
+     * @param string          $exceptionClass Name of exception class (which implements
+     *                                        Ex\InvalidTypeExceptionContract) to be used when assertion
+     *                                        fails. In that case object of that class will be instantiated
+     *                                        and thrown.
+     * @param string|null     $variableName   Label or name of the variable to use exception message.
      *
      */
-    public static function assertIsType(mixed   $value,
-                                                $allowed_types,
-                                        string  $ex_class = Ex\InvalidTypeException::class,
-                                        ?string $var_name = null): void
+    public static function assertIsType(mixed        $value,
+                                        string|array $allowedTypes,
+                                        string       $exceptionClass = Ex\InvalidTypeException::class,
+                                        ?string      $variableName = null): void
     {
-        if (!(\is_array($allowed_types) || \is_string($allowed_types))) {
-            throw new \InvalidArgumentException("Allowed types must be either string or array of strings.");
-        }
-
-        $allowed_types = (array)$allowed_types;
+        $allowedTypes = (array)$allowedTypes;
 
         // Type::EXISTING_CLASS is artificial type, so we need separate logic to handle it.
-        $filteredAllowedTypes = $allowed_types;
+        $filteredAllowedTypes = $allowedTypes;
         $idx = \array_search(Type::EXISTING_CLASS, $filteredAllowedTypes, true);
         if ($idx !== false) {
             // Remove the type, so gettype() test loop won't see it.
@@ -57,11 +53,11 @@ class Validator
 
         $type = \get_debug_type($value);
         if (empty($filteredAllowedTypes)) {
-            throw new \InvalidArgumentException("List of allowed types cannot be empty.}");
+            throw new \InvalidArgumentException('List of allowed types cannot be empty.');
         }
         if (!\in_array($type, $filteredAllowedTypes, true)) {
             // FIXME we need to ensure $exClass implements Ex\InvalidTypeExceptionContract at some point.
-            throw new $ex_class($type, $filteredAllowedTypes, $var_name);
+            throw new $exceptionClass($type, $filteredAllowedTypes, $variableName);
         }
     }
 
