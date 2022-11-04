@@ -1,9 +1,9 @@
-# Type Asserts #
+# PHP Type Asserts #
 
-[![Latest Stable Version](https://poser.pugx.org/marcin-orlowski/type-asserts/v/stable)](https://packagist.org/packages/marcin-orlowski/type-asserts)
-[![License](https://poser.pugx.org/marcin-orlowski/type-asserts/license)](https://packagist.org/packages/marcin-orlowski/type-asserts)
+[![Latest Stable Version](https://poser.pugx.org/marcin-orlowski/php-type-asserts/v/stable)](https://packagist.org/packages/marcin-orlowski/php-type-asserts)
+[![License](https://poser.pugx.org/marcin-orlowski/php-type-asserts/license)](https://packagist.org/packages/marcin-orlowski/php-type-asserts)
 
-Data type assertions.
+PHP Data type assertions.
 
 ## Installation ##
 
@@ -16,5 +16,4 @@ composer require --dev marcin-orlowski/type-asserts
 ## License ##
 
 * Written and copyrighted &copy;2014-2022 by Marcin Orlowski
-* Type Asserts is open-sourced software licensed under
-  the [MIT license](http://opensource.org/licenses/MIT)
+* Open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)

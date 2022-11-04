@@ -10,9 +10,13 @@ declare(strict_types=1);
  * @link      https://github.com/MarcinOrlowski/php-type-asserts
  */
 
-namespace MarcinOrlowski\TypeAsserts\Exception;
+namespace MarcinOrlowski\TypeAsserts\Tests;
 
-final class NotFloatException extends InvalidTypeException
+/**
+ * Class TestCase
+ */
+abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
-	// empty
-}
+
+
+} // end of class
