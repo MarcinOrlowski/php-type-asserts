@@ -3,7 +3,8 @@
 ## CHANGELOG ##
 
 * 2.1.0 (2023-12-30)
-  * added helper functions `assertIsXXX()` for all supported types.
+  * Added helper functions `assertIsXXX()` for all supported types.
+  * Added PHP 8.2 to test suites
 
 * 2.0.0 (2022-11-04)
   * Dropped support for PHP 7.
