@@ -20,16 +20,18 @@ use MarcinOrlowski\TypeAsserts\Exception as Ex;
 class Validator
 {
     /**
-     * Checks if $item (of name $key) is of type that is include in $allowed_types (there's `OR` connection
-     * between specified types).
+     * Checks if $item (of name $key) is of type that is include in $allowed_types (there's `OR`
+     * connection between specified types).
      *
      * @param mixed           $value          Variable to be asserted.
-     * @param string|string[] $allowedTypes   Array of allowed types for $value, i.e. [Type::INTEGER]
+     * @param string|string[] $allowedTypes   Array of allowed types for $value, i.e.
+     *                                        [Type::INTEGER]
      * @param string          $exceptionClass Name of exception class (which implements
-     *                                        Ex\InvalidTypeExceptionContract) to be used when assertion
-     *                                        fails. In that case object of that class will be instantiated
-     *                                        and thrown.
-     * @param string|null     $variableName   Label or name of the variable to use exception message.
+     *                                        Ex\InvalidTypeExceptionContract) to be used when
+     *                                        assertion fails. In that case object of that class
+     *                                        will be instantiated and thrown.
+     * @param string|null     $variableName   Label or name of the variable to use exception
+     *                                        message.
      *
      */
     public static function assertIsType(mixed        $value,
@@ -55,12 +57,42 @@ class Validator
 
         $providedType = \gettype($value) === 'object' ? 'object' : \get_debug_type($value);
         if (!\in_array($providedType, $allowedTypes, true)) {
-            // FIXME we need to ensure $exClass implements Ex\InvalidTypeExceptionContract at some point.
+            // FIXME we need to ensure $exClass implements Ex\InvalidTypeExceptionContract
             /* @phpstan-ignore-next-line */
             throw new $exceptionClass($providedType, $allowedTypes, $variableName);
         }
     }
 
-    /* **************************************************************************************************** */
+    /* ****************************************************************************************** */
+
+    public static function assertIsArray(mixed $value, ?string $variableName = null): void
+    {
+        self::assertIsType($value, Type::ARRAY, Ex\NotArrayException::class, $variableName);
+    }
+
+    public static function assertIsBool(mixed $value, ?string $variableName = null): void
+    {
+        self::assertIsType($value, Type::BOOL, Ex\NotBooleanException::class, $variableName);
+    }
+
+    public static function assertIsFloat(mixed $value, ?string $variableName = null): void
+    {
+        self::assertIsType($value, Type::FLOAT, Ex\NotFloatException::class, $variableName);
+    }
+
+    public static function assertIsInt(mixed $value, ?string $variableName = null): void
+    {
+        self::assertIsType($value, Type::INT, Ex\NotIntegerException::class, $variableName);
+    }
+
+    public static function assertIsObject(mixed $value, ?string $variableName = null): void
+    {
+        self::assertIsType($value, Type::OBJECT, Ex\NotObjectException::class, $variableName);
+    }
+
+    public static function assertIsString(mixed $value, ?string $variableName = null): void
+    {
+        self::assertIsType($value, Type::STRING, Ex\NotStringException::class, $variableName);
+    }
 
 } // end of class

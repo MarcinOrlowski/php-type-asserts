@@ -2,6 +2,9 @@
 
 ## CHANGELOG ##
 
+* 2.1.0 (2023-12-30)
+  * added helper functions `assertIsXXX()` for all supported types.
+
 * 2.0.0 (2022-11-04)
   * Dropped support for PHP 7.
   * Fixed `EXISTING_CLASS` assertion.
